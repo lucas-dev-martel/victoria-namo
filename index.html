@@ -63,9 +63,10 @@
             justify-items: center;
             align-items: center;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(7, 1fr);
+            grid-template-rows: repeat(8, 1fr);
             grid-template-areas: "v vv"
                 "i ii"
+                "c cc"
                 "t tt"
                 "o oo"
                 "r rr"
@@ -88,7 +89,12 @@
         #ii {
             grid-area: ii;
         }
-
+        #c{
+            grid-area: c;
+        }
+        #cc{
+            grid-area: cc;
+        }
         #t {
             grid-area: t;
         }
@@ -160,6 +166,8 @@
         <span id="i" class="grande">I</span>
         <span id="ii" class="pequeno">nteressante</span>
 
+        <span id="c" class="grande">C</span>
+        <span id="cc" class="pequeno">otosa</span>
 
         <span id="t" class="grande">T</span>
         <span id="tt" class="pequeno">esuda</span>
