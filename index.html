@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victória Baubier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Patrick Hand', cursive;
+            color: white
+        }
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #ff99cc, #ff66cc);
+        }
+
+        .carroussel {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            height: 200px;
+            width: 132px;
+            border-radius: 50%;
+            border: 10px groove rgba(211, 35, 255, 0.894);
+            box-shadow: 2px 2px 20px 2px rgb(255, 0, 170);
+        }
+
+        .texto {
+            margin: 10px;
+            font-size: 2vw;
+            text-indent: 6%;
+        }
+
+        .grande {
+            font-size: 10%;
+            font-weight: bolder;
+            justify-self: flex-end;
+            color: red;
+        }
+        .pequeno{
+            justify-self: flex-start;
+        }
+        .histo {
+            font-size: 3%;
+            width: 50%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(7, 1fr);
+            grid-template-areas: "v vv"
+                "i ii"
+                "t tt"
+                "o oo"
+                "r rr"
+                "i1 ii1"
+                "a aa";
+        }
+
+        #v {
+            grid-area: v;
+        }
+
+        #vv {
+            grid-area: vv;
+        }
+
+        #i {
+            grid-area: i;
+        }
+
+        #ii {
+            grid-area: ii;
+        }
+
+        #t {
+            grid-area: t;
+        }
+
+        #tt {
+            grid-area: tt;
+        }
+
+        #o {
+            grid-area: o;
+        }
+
+        #oo {
+            grid-area: oo;
+        }
+
+        #r {
+            grid-area: r;
+        }
+
+        #rr {
+            grid-area: rr;
+        }
+
+        #i1 {
+            grid-area: i1;
+        }
+
+        #ii1 {
+            grid-area: ii1;
+        }
+
+        #a {
+            grid-area: a;
+        }
+
+        #aa {
+            grid-area: aa;
+        }
+        #texto-sumi{
+            display: none;
+        }
+        #conhecer{
+            border-radius: 20px;
+            font-size: 20%;
+            padding: 2%;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carro" class="carroussel">
+    <img id="imagem" src="./public/perfil.jpeg" alt="gatissima">
+    </div>
+    <div id="text" class="texto">
+        <p>Meu Nome é Victoria, sou gostosa, cheirosa e católica. Gosto de homens inteligentes, que não tenham medo de
+            abelhas, porque eu gosto muito de abelha. Se você é alergico abelha, é melhor morrer, porque esse melzinho
+            aqui não gosta de homi fraco.</p>
+        <p>Não me irrite, ou você não me verá por pelo menos um mês, a menos que você compre mel, ai tudo bem.</p>
+        <p>Gosto de tirar espinhas da cara de quem eu amo, por isso, se você sente dorzinha, saia de perto de mim seu
+            frouxo!</p>
+        <p>Mas no final eu sou um anjinho :)</p>
+    </div>
+    <div id="hist" class="histo">
+        <span id="v" class="grande">V</span>
+        <span id="vv" class="pequeno">alente</span>
+
+        <span id="i" class="grande">I</span>
+        <span id="ii" class="pequeno">nteressante</span>
+
+
+        <span id="t" class="grande">T</span>
+        <span id="tt" class="pequeno">esuda</span>
+
+
+        <span id="o" class="grande">Ó</span>
+        <span id="oo" class="pequeno">tima</span>
+
+
+        <span id="r" class="grande">R</span>
+        <span id="rr" class="pequeno">abuda</span>
+
+
+        <span id="i1" class="grande">I</span>
+        <span id="ii1" class="pequeno">gienica</span>
+
+
+        <span id="a" class="grande">A</span>
+        <span id="aa" class="pequeno">morosa até um certo nível</span>
+
+    </div>
+    <button id="conhecer">Me conhecer</button>
+    <p id="texto-sumi">SUMI!</p>
+    <script>
+        const valores = ['./public/perfil.jpeg', './public/franca.jpeg']
+        var indice = 0
+        setInterval(() =>{
+            indice = indice == 0 ? 1 : 0
+            document.getElementById("imagem").src = valores[indice]
+        }, 5000)
+        document.getElementById("conhecer").addEventListener("click", (e) => {
+            const texts = document.querySelectorAll("div")
+            for(let  i = 0; i < texts.length; i++) {
+                texts[i].style.display = "none"
+            }
+            document.getElementById("texto-sumi").style.display = "block"
+            e.currentTarget.style.display = "none"
+            setTimeout(()=>{
+                document.getElementById("carro").style.display = "flex"
+                document.getElementById("text").style.display = "block"
+                document.getElementById("hist").style.display = "grid"
+                document.getElementById("conhecer").style.display = "block"
+                document.getElementById("texto-sumi").style.display = "none"
+            }, 2000)
+        })
+    </script>
+
+</body>
+
+</html>
